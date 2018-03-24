@@ -13,4 +13,4 @@ A color theme for terminator using Ethan Schoonover’s
 1. Replace the contents of `~/.config/terminator/config` file with the config
 from this repository
 2. Restart Terminator
-==> Enjoy!
+3. Enjoy!
