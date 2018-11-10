@@ -1,10 +1,10 @@
 #!/bin/bash
 echo "(1/7) Updating Mac App Store applications"
 mas outdated
-read -p "Do you want to run mas upgrade? (y/N) " choice
+read -p "Do you want to run mas upgrade? (Y/n) " choice
 case "$choice" in
-  y|Y ) mas upgrade;;
-  n|N|* ) echo "mas update skipped";;
+  y|Y|* ) mas upgrade;;
+  n|N ) echo "mas update skipped";;
 esac
 
 echo "(2/7) Updating Homebrew packages"
@@ -13,7 +13,6 @@ brew upgrade --cleanup
 
 echo "(3/7) Updating Homebrew-Cask packages"
 brew cask outdated | cut -f 1 | xargs brew cask reinstall
-brew cask cleanup
 
 echo "(4/7) Updating Atom text editor plugins"
 apm update --no-confirm
