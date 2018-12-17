@@ -14,7 +14,7 @@ else
   for repo in `find ./ -name ".git"`;
   do
     cd ${repo}/..;
-    git log master --author=$1 --after=$(date +%Y-%m-01) --pretty=format:%H;
+    git log master --author=$1 --after='$(date +%Y-%m-01T00:00:00Z)' --pretty=format:%H;
     cd ..;
   done
 fi
